@@ -1,6 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+//nouvelle fonction creer un nouveau tableau selon la logique suivante
+//newTab[i] = array[arry[i]]; une sorte  de permutation.
+//la fonction n'est pas utilisee dans le programme
+int* buildArray(int* nums, int numsSize, int* returnSize) {
+    *returnSize = numsSize;
+    int* newTab = malloc(numsSize*sizeof(int));
+
+    for(int i = 0;i<numsSize;i++){
+        newTab[i] = nums[nums[i]];
+    }
+    return newTab;
+}
+
 int* Two_concatenation(const int* array, const int arraySize,int* returnSize) {
     if(array == NULL) {
         exit(111);
