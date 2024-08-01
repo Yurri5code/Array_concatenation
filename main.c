@@ -2,6 +2,26 @@
 #include <stdlib.h>
 
 
+//nouvelle fonction qui rearrange un tableau selon une directive precise qui est de creer un tableau avec des x et y
+//la fonction recoit un nombre n qui est le debut des valeur des y et les valeur avant ce n sont des x
+//le nouveau tableau est de la forme x,y et ainsi de suite
+int* shuffle(int* nums, int numsSize, int n, int* returnSize){
+    int *tab = malloc(numsSize*sizeof(int)),nbr = numsSize/2,j = 0;
+
+    for(int i = 0;i<numsSize;i++){
+        if(i%2 == 0){
+            tab[i] = nums[j];
+            j++;
+        }
+        else{
+            tab[i] = nums[nbr];
+            nbr++;
+        }
+    }
+    *returnSize = numsSize;
+    return tab;
+}
+
 //nouvelle fonction creer un nouveau tableau selon la logique suivante
 //newTab[i] = array[arry[i]]; une sorte  de permutation.
 //la fonction n'est pas utilisee dans le programme
